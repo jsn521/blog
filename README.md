@@ -1,1 +1,1 @@
-自己的个人博客，边学边做，希望大家给出宝贵意见。
+this is my self blog, the destination id to practice the techniques that i have learned to be skilled.
