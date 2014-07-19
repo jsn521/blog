@@ -1,0 +1,76 @@
+<!DOCTYPE>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <style type="text/css">
+        #deals {
+            display: flex; /* Flex layout so items have equal height  */
+            display: -moz-flex;
+            flex-flow: row wrap; /* Allow items to wrap into multiple lines */
+        }
+
+        .sale-item {
+            display: flex; /* Lay out each item using flex layout */
+            display: -moz-flex;
+            flex-flow: column; /* Lay out item’s contents vertically  */
+        }
+
+        .sale-item > img {
+            order: -1; /* Shift image before other content (in visual order) */
+            align-self: center; /* Center the image cross-wise (horizontally)         */
+        }
+
+        .sale-item > button {
+            margin-top: auto; /* Auto top margin pushes button to bottom */
+        }
+        .flex_container{
+            display: flex;
+            width: 600px;
+            height: 50px;
+            line-height: 30px;
+            background: green;
+        }
+        .flex_item{
+            flex-direction: row-reverse;
+            height: 50px;
+            border: 1px solid #000000;
+            background: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<section id='deals'>
+    <section class='sale-item'>
+        <h1>Computer Starter Kit</h1>
+
+        <p>This is the best computer money can buy, if you don’t have much money.
+        <ul>
+            <li>Computer
+            <li>Monitor
+            <li>Keyboard
+            <li>Mouse
+        </ul>
+        <img src='images/computer.jpg'
+             alt='You get: a white computer with matching peripherals.'>
+        <button>BUY NOW</button>
+    </section>
+    <section class='sale-item'>
+        …
+    </section>
+    …
+</section>
+<section class="flex_container">
+    <section class="flex_item">first section</section>
+    <section class="flex_item">second section</section>
+    <span>
+        item 4
+        <!-- flex items do not split around blocks -->
+        <div id='not-an-item'>item 4</div>
+        item 4
+    </span>
+</section>
+<div style="display:flex; ">浙江理工大学</div>
+</body>
+</html>
+
+

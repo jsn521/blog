@@ -1,0 +1,66 @@
+<% if(typeof articles !== "undefined" && articles.length > 0){ %>
+<% for(var i = 0;i < articles.length;i++){ %>
+<div class="section">
+    <h3><a href='/article/<%= articles[i]._id %>' target="_blank"><%= articles[i].title %></a></h3>
+
+    <div class="article-info">
+        <span title="最后更新时间"><i class="pubtime"></i><%= articles[i].info.created_time %></span>
+        <span title="查看分类:<%= articles[i].info.parent_tag %>"><i class="category"></i><%= articles[i].info.parent_tag %></span>
+        <span title="所属分类:<%= articles[i].info.child_tag %>"><i class="tag"></i><%= articles[i].info.child_tag %></span>
+        <span title="点击次数:<%= articles[i].info.good %>">
+            <i class="good"></i>
+            <good _id="<%= articles[i]._id %>" class="s_good"
+                  good="<%= articles[i].info.good %>"><%= articles[i].info.good %></good>
+        </span>
+    </div>
+    <div class="summary">
+        <div class="content">
+            <%= articles[i].info.content %>
+        </div>
+        <% if(articles[i].full == 1){ %>
+        <p><a href="/article/<%= articles[i]._id %>" target="_blank">[阅读全文...]</a></p>
+        <% } %>
+    </div>
+</div>
+<% } %>
+<script type="text/javascript">
+    window.onload = function () {
+        $(".s_good").bind("click", function () {
+            var thisSpan = $(this), _id = $(this).attr("_id"), good = $(this).attr("good");
+            var nowgood = parseInt(good) + 1;
+            $.post("/addGood", {_id: _id, good: nowgood}, function (data) {
+                if (data === "success") {
+                    thisSpan.attr("good", nowgood);
+                    thisSpan.html(nowgood);
+                } else {
+                }
+            });
+        });
+    };
+</script>
+<div>
+    <!--<% if(page >= 2){ %>
+    <% if(page == 2){ %>
+    <a href="/article"><span>上一页<span></a>
+    <% }else{ %>
+    <a href="/article?page=<%= page - 1 %>"><span>上一页<span></a>
+    <% } %>
+    <% } %>
+    <% if(page * 5 <= total){ %>
+    <a href=""><span>下一页<span></a>
+    <% } %>-->
+    <ul class="page">
+        <% var _page = total / 5 + 1; %>
+        <% if (total % 5 == 0){ %>
+        <% _page = total / 5; %>
+        <% } %>
+        <% for(var i = 1;i <= _page;i++){ %>
+        <% if(page == i){ %>
+        <li class="active"><a href="/article?page=<%= i %>"><%= i %></a></li>
+        <% }else{ %>
+        <li><a href="/article?page=<%= i %>"><%= i %></a></li>
+        <% } %>
+        <% } %>
+    </ul>
+</div>
+<% } %>

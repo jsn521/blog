@@ -1,0 +1,86 @@
+/**
+ * Created with JetBrains WebStorm.
+ * User: Administrator
+ * Date: 13-12-24
+ * Time: 下午9:34
+ * To change this template use File | Settings | File Templates.
+ */
+var mongodb = require('./db');
+function Sessions(session) {
+    this.key = session.key;
+    this.value = session.value;
+}
+exports = module.exports = Sessions;
+
+Sessions.prototype.save = function (callback) {
+    var session = {
+        key: this.key,
+        value: this.value
+    };
+    mongodb.open(function (err, db) {
+        if (err) {
+            mongodb.close();
+            return callback(err);
+        }
+        db.collection('my_blog_sessions', function (err, collection) {
+            if (err) {
+                mongodb.close();
+                return callback(err);
+            }
+            collection.insert(session, {safe: true}, function (err, session) {
+                if (err) {
+                    mongodb.close();
+                    return callback(err);
+                }
+                mongodb.close();
+                callback(null, session);
+            });
+        });
+    });
+};
+
+Sessions.get = function (key, callback) {
+    mongodb.open(function (err, db) {
+        if (err) {
+            mongodb.close();
+            callback(err);
+        }
+        db.collection('my_blog_sessions', function (err, collection) {
+            if (err) {
+                mongodb.close();
+                callback(err);
+            }
+            collection.findOne({key: key}, function (err, session) {
+                if (err) {
+                    mongodb.close();
+                    callback(err);
+                }
+                mongodb.close();
+                callback(null, session);
+            });
+        });
+    });
+};
+
+Sessions.remove = function (key, callback) {
+    mongodb.open(function (err, db) {
+        if (err) {
+            mongodb.close();
+            callback(err);
+        }
+        db.collection('my_blog_sessions', function (err, collection) {
+            if (err) {
+                mongodb.close();
+                callback(err);
+            }
+            collection.remove({key: key}, {w: 1}, function (err, modifedNumber) {
+                if (err) {
+                    mongodb.close();
+                    callback(err);
+                }
+                mongodb.close();
+                callback(null, modifedNumber);
+            });
+        });
+    });
+};

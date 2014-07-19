@@ -1,0 +1,104 @@
+<div class="menu">
+    <ul>
+        <% if(typeof pTags != "undefined" && pTags.length > 0){ %>
+        <% for(var j = 0;j < pTags.length;j++){ %>
+        <% if(pTags[j].name.trim().length > 0){ %>
+        <li><a href="/article/category/<%= pTags[j].name %>"><%= pTags[j].name %></a></li>
+        <!--<li><a href="#"><%= pTags[j].name %></a></li>-->
+        <% } %>
+        <% } %>
+        <% } %>
+    </ul>
+</div>
+
+<% if(typeof articles !== "undefined" && articles.length > 0){ %>
+<% for(var i = 0;i < articles.length;i++){ %>
+<% var _content = articles[i].info.content; %>
+<div class="section">
+    <h3><a href='/article/<%= articles[i]._id %>' target="_blank"><%= articles[i].title %></a></h3>
+
+    <div class="article-info">
+        <span title="最后更新时间"><i class="pubtime"></i><%= articles[i].info.created_time %></span>
+        <span title="查看分类:<%= articles[i].info.parent_tag %>"><i class="category"></i><%= articles[i].info.parent_tag %></span>
+        <span title="所属分类:<%= articles[i].info.child_tag %>"><i class="tag"></i><%= articles[i].info.child_tag %></span>
+        <span title="点击次数:<%= articles[i].good %>">
+            <i class="good"></i>
+            <good _id="<%= articles[i]._id %>" class="s_good"
+                  good="<%= articles[i].good %>"><%= articles[i].good %></good>
+        </span>
+    </div>
+    <div class="summary">
+        <div class="content">
+            <%= _content %>
+        </div>
+        <% if(articles[i].full == 1){ %>
+        <p><a href="/article/<%= articles[i]._id %>" target="_blank">[阅读全文...]</a></p>
+        <% } %>
+    </div>
+</div>
+<% } %>
+<div class="modal fade" style="display:none;" id="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">分类列表</h4>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <ul></ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    window.onload = function () {
+        $(".s_good").bind("click", function () {
+            var thisSpan = $(this), _id = $(this).attr("_id"), good = $(this).attr("good");
+            var nowgood = parseInt(good) + 1;
+            $.post("/addGood", {_id: _id, good: nowgood}, function (data) {
+                if (data === "success") {
+                    thisSpan.attr("good", nowgood);
+                    thisSpan.html(nowgood);
+                } else {
+                }
+            });
+        });
+        $(".menu a").on("click", function (e) {
+//            console.log(this.innerHTML);
+            e.preventDefault();
+            $.get("/article/category/" + $(this).html(), function (data) {
+//                console.log(data);
+                if ($.isArray(data)) {
+                    if (data.length == 0) {
+                        alert("该类别没有文章");
+                        return;
+                    }
+                    var _arr = [];
+                    data.forEach(function (elem, index) {
+                        _arr.push("<a target='_blank' href='/article/" + elem._id + "'>" +
+                                elem.title + "</a>");
+                    });
+                    $("#modal-body>ul:first").html("<li>" + _arr.join("</li><li>") + "</li>");
+                    $("#modal").modal();
+                }
+            }, "json");
+        });
+    };
+</script>
+<div style="margin-left: 0;">
+    <ul class="page">
+        <% var _page = total / 5 + 1; %>
+        <% if (total % 5 == 0){ %>
+        <% _page = total / 5; %>
+        <% } %>
+        <% for(var i = 1;i <= _page;i++){ %>
+        <% if(page == i){ %>
+        <li class="active"><a href="/article?page=<%= i %>"><%= i %> </a></li>
+        <% }else{ %>
+        <li><a href="/article?page=<%= i %>"><%= i %> </a>
+        </li>
+        <% } %>
+        <% } %>
+    </ul>
+</div>
+<% } %>

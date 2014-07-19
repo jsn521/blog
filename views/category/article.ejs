@@ -1,0 +1,43 @@
+<div class="cat_container">
+    <% if(type !== 'all'){ %>
+    <div class="title">
+        <span><%= type %></span>
+    </div>
+    <div class="category">
+        <ul>
+            <% if(typeof articles !== "undefined" && articles.length > 0){ %>
+            <% for(var i = 0;i < articles.length;i++){ %>
+            <li><%=i+1%>&nbsp;&nbsp;<a target="_blank" href="/article/<%= articles[i]._id %>"><%= articles[i].title %></a></li>
+            <% }}else{ %>
+            <li><h3>暂无文章</h3></li>
+            <% } %>
+        </ul>
+    </div>
+    <% }else{ %>
+    <% for(var property in articles){ %>
+    <div class="title">
+        <span><%= property %></span>
+    </div>
+    <div class="category">
+        <ul>
+            <% var tempArr = articles[property]; %>
+            <% if(typeof tempArr !== "undefined" && tempArr.length > 0){ %>
+            <% for(var i = 0;i < tempArr.length;i++){ %>
+            <li><%=i+1%>&nbsp;&nbsp;<a target="_blank" href="/article/<%= tempArr[i]._id %>"><%= tempArr[i].title %></a></li>
+            <% }}else{ %>
+            <li><h3>暂无文章</h3></li>
+            <% } %>
+        </ul>
+    </div>
+    <% } %>
+    <% } %>
+    <script type="text/javascript">
+        $(function () {
+            $(".title").toggle(function () {
+                $(this).next().show('normal');
+            }, function () {
+                $(this).next().slideUp('normal');
+            });
+        });
+    </script>
+</div>

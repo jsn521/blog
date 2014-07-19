@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title></title>
+    <style type="text/css">
+        #table-example-1 {
+            border: solid thin;
+            border-collapse: collapse;
+        }
+
+        #table-example-1 caption {
+            padding-bottom: 0.5em;
+        }
+
+        #table-example-1 th,
+        #table-example-1 td {
+            border: solid thin;
+            padding: 0.5rem 2rem;
+        }
+
+        #table-example-1 td {
+            white-space: nowrap;
+        }
+
+        #table-example-1 th {
+            font-weight: normal;
+        }
+
+        #table-example-1 td {
+            border-style: none solid;
+            vertical-align: top;
+        }
+
+        #table-example-1 th {
+            padding: 0.2em;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        #table-example-1 tbody td:first-child::after {
+            content: leader(". ");
+        }
+
+        body {
+            padding: 1rem;
+        }
+
+        .mytable {
+            border: solid thin;
+            border-collapse: collapse;
+        }
+
+        .mytable td, .mytable th {
+            border: solid thin;
+        }
+
+        .mytable td {
+            border-style: none solid;
+        }
+    </style>
+</head>
+<body>
+<canvas width="600px" height="400px" id="canvas"></canvas>
+<input type="button" value="停止" id="stop"/>
+<script type="text/javascript">
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+    var startX = 270, startY = 170;
+    var startTime = +new Date(), nowTime, angel, interval;
+    function draw() {
+        context.clearRect(0, 0, 600, 400);
+        context.beginPath();
+        context.arc(300, 200, 30, 0, Math.PI * 2, true);
+        context.stroke();
+        nowTime = +new Date();
+        angel = (nowTime - startTime) * 2 * Math.PI / (1000 * 60);
+        context.beginPath();
+        context.rect(295 + Math.cos(angel) * 30, 195 + Math.sin(angel) * 30, 10, 10);
+        context.stroke();
+    }
+    interval = setInterval(draw, 1);
+    document.getElementById('stop').onclick = function () {
+        clearInterval(interval);
+    };
+</script>
+
+<table class="mytable">
+    <caption>杭州西湖三日游出行名单</caption>
+    <thead>
+
+    <tr>
+        <th>编号</th>
+        <th>姓名</th>
+        <th>联系电话</th>
+        <th>地址</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1</td>
+        <td>James</td>
+        <td>12345678</td>
+        <td>XXXXXXXX</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>James</td>
+        <td>12345678</td>
+        <td>XXXXXXXX</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>James</td>
+        <td>12345678</td>
+        <td>XXXXXXXX</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <th colspan="4" style="text-align: left">领队签字</th>
+    </tr>
+    </tfoot>
+
+</table>
+<table id="table-example-1">
+    <caption>Specification values: <b>Steel</b>, <b>Castings</b>,
+        Ann. A.S.T.M. A27-16, Class B;* P max. 0.06; S max. 0.05.
+    </caption>
+    <thead>
+    <tr>
+        <th rowspan="2">Grade.</th>
+        <th rowspan="2">Yield Point.</th>
+        <th colspan="2">Ultimate tensile strength</th>
+        <th rowspan="2">Per cent elong. 50.8&nbsp;mm or&nbsp;2&nbsp;in.</th>
+        <th rowspan="2">Per cent reduct. area.</th>
+    </tr>
+    <tr>
+        <th>kg/mm<sup>2</sup></th>
+        <th>lb/in<sup>2</sup></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Hard</td>
+        <td>0.45 ultimate</td>
+        <td>56.2</td>
+        <td>80,000</td>
+        <td>15</td>
+        <td>20</td>
+    </tr>
+    <tr>
+        <td>Medium</td>
+        <td>0.45 ultimate</td>
+        <td>49.2</td>
+        <td>70,000</td>
+        <td>18</td>
+        <td>25</td>
+    </tr>
+    <tr>
+        <td>Soft</td>
+        <td>0.45 ultimate</td>
+        <td>42.2</td>
+        <td>60,000</td>
+        <td>22</td>
+        <td>30</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

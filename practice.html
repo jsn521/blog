@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8;">
+    <title>alibaba</title>
+    <style type="text/css">
+        .parent {
+            background: #fff url(test/background.png);
+            width: 459px;
+            height: 200px;
+        }
+
+        .A {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background-color: green;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -moz-flex;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-align: center;
+            -webkit-box-align: center;
+            -moz-box-pack: center;
+            -webkit-box-align: center;
+            -moz-box-align: center;
+            /*-webkit-box-orient:horizontal*/
+        }
+
+        .B {
+            /*position: absolute;*/
+            height: 300px;
+            width: 300px;
+            max-width: 300px;
+            max-height: 300px;
+            background-color: blue;
+
+            /*left: 100px;*/
+            /*top: 100px;*/
+        }
+
+        .my_flex {
+            background-color: green;
+            display: -moz-box;
+            display: -webkit-box;
+            display: box;
+            height: 50px;
+            line-height: 30px;
+            text-indent: 10px;
+            width: 100%;
+        }
+
+        .item {
+            box-flex: 1;
+            -moz-box-flex: 1;
+            -webkit-box-flex: 1;
+            margin: 10px;
+            background: #fff;
+        }
+
+        .item:first-child {
+            box-flex: 0;
+            -moz-box-flex: 0;
+            -webkit-box-flex: 0;
+            width: 200px;
+            background: #fff;
+            margin: 10px
+        }
+
+        .item:nth-child(2) {
+            margin: 10px 0
+        }
+
+        #flex-container {
+            width: 100%;
+            /* flexbox specific properties */
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: row;
+            flex-direction: row;
+        }
+
+        #flex-container .flex-item {
+            border: 1px solid #f00;
+            /* flexbox specific properties */
+            -webkit-flex: auto;
+            flex: auto;
+        }
+
+        #clearFloat {
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            float: left;
+        }
+
+        #clearFloat:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        #afterFloat {
+            width: 400px;
+            width: auto;
+            height: 150px;
+            background: green;
+            margin-left: 200px;
+            /*float: left;*/
+        }
+
+        #footer {
+            width: 100%;
+            height: 50px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+<table border="1" cellspacing="0">
+    <thead>
+    <tr style="text-align:center;">
+        <th width="20%">国家</th>
+        <th width="20%">名称</th>
+        <th>地址</th>
+        <th width="20%">排名</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>中国</td>
+        <td>淘宝</td>
+        <td>www.taobao.com</td>
+        <td>32</td>
+    </tr>
+    <tr>
+        <td rowspan="2">美国</td>
+        <td>ebay</td>
+        <td>www.ebay.com</td>
+        <td>22</td>
+    </tr>
+    <tr>
+        <td>facebook</td>
+        <td>www.facebook.com</td>
+        <td>12</td>
+    </tr>
+    <tr>
+        <td colspan="4" style="text-align: right">网站排名</td>
+    </tr>
+    </tbody>
+</table>
+<div class="parent"></div>
+<div class="A">
+    <div class="B"></div>
+</div>
+<div class="my_flex">
+    <div class="item">column 1</div>
+    <div class="item">column 2</div>
+    <div class="item">column 3</div>
+</div>
+<div id="flex-container">
+    <div class="flex-item">Flex Box 1</div>
+    <div class="flex-item">Flex Box 2</div>
+    <div class="flex-item">Flex Box 3</div>
+    <div class="flex-item">Flex Box 4</div>
+</div>
+<div>
+    <div style="width: 100%;height: auto;overflow: hidden">
+        <div id="clearFloat">第一个div</div>
+        <div id="afterFloat">第二个div</div>
+    </div>
+    <div id="footer"></div>
+</div>
+<script type="text/javascript">
+    Array.prototype.Distinct = function () {
+        if (this.length <= 1)return;
+        var obj = {}, arr = [];
+        for (var i = 0; i < this.length; i++) {
+            if (!obj[this[i]]) {
+                obj[this[i]] = i;
+                arr.push(this[i]);
+            }
+        }
+        return arr;
+    };
+    Array.prototype.InsertSort = function () {
+        if (this.length <= 1)return;
+        for (var i = 1; i < this.length; i++) {
+            if (typeof this[i] !== typeof this[i - 1])continue;
+            var j = i, temp = (this[i]), pos = -1;
+            for (; j >= 1; j--) {
+                if (typeof this[j - 1] !== typeof this[j])break;
+                if (this[j - 1] > temp) {
+                    this[j ] = this[j - 1];
+                    pos = j - 1;
+                }
+            }
+            if (pos != -1)
+                this[pos] = temp;
+        }
+        return this;
+    };
+    Array.prototype.SubSort = function () {
+        if (this.length <= 1)return;
+        for (var i = 1; i < this.length; i++) {
+            var temp = this[i], pos = -1;
+            for (var j = i; j >= 1; j--) {
+                if ((this[j - 1]).substring(1) > temp.substring(1)) {
+                    this[j] = this[j - 1];
+                    pos = j - 1;
+                }
+            }
+            if (pos != -1)
+                this[pos] = temp;
+        }
+        return this;
+    };
+    Array.prototype.Shuffle = function () {
+        if (this.length <= 1)return;
+        var temp, j = 0;
+        for (var i = 0; i < this.length; i++) {
+            j = parseInt(Math.random() * this.length, 10);
+            temp = this[i];
+            this[i] = this[j];
+            this[j] = temp;
+        }
+        return this;
+    };
+    var arr1 = [1, 2, 3, 4, 5, 4, 2];
+    console.log(arr1.Distinct());
+    var arr2 = [ 2, "test1", 3, 4, 5, 1, "test2", 56, 23];
+    //        arr2.sort(function (a, b) {
+    //            return a > b;
+    //        });
+    //        console.log(arr2);
+    console.log(arr2.InsertSort());
+    console.log("TEst".toLowerCase());
+    console.log("TEst".toUpperCase());
+
+    var arr3 = ["abd", "cba", "ba", "ds", "dtr", "das"];
+    console.log(arr3.SubSort());
+    var arr4 = [1, 2, 3, 4, 5, 67, 6];
+    console.log(arr4.Shuffle().join('-'));
+    var parser = document.createElement("a");
+    parser.href = "http://localhost:8080/search?q=s#filter";
+    var _index = parser.protocol.indexOf(":");
+    var obj = {
+        scheme: parser.protocol.substr(0, _index),
+        slash: parser.href.substr(_index + 1, 2),
+        host: parser.host,
+        port: parser.port,
+        path: parser.pathname,
+        hash: parser.hash.replace("#", ""),
+        query: parser.search.replace("?", "")
+    };
+    console.log(obj);
+</script>
+</body>
+</html>

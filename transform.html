@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>transform practice</title>
+<style type="text/css">
+#route {
+    margin-left: 400px;
+    width: 200px;
+    height: 200px;
+    background: orange;
+    /*transform-origin: top left;*/
+    transform-origin: center;
+    /*-webkit-transform-origin: top left;*/
+    -webkit-transform-origin: 100px 100px;
+    transform: rotate(20deg);
+    -webkit-transform: rotate(20deg);
+}
+
+#translate {
+    width: 200px;
+    height: 200px;
+    background: orangered;
+    margin-top: 50px;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    transform: translateX(100px);
+    -webkit-transform: translateX(100px);
+    transform: translateY(20px);
+    -webkit-transform: translateY(20px);
+    -webkit-transform: translate(100px, 20px);
+}
+
+#scale {
+    width: 200px;
+    height: 200px;
+    background: #ff0000;
+}
+
+#scale:hover {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: scale(2, 2);
+}
+
+#skew {
+    margin-left: 100px;
+    width: 200px;
+    height: 200px;
+    background: green;
+}
+
+#skew:hover {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: skew(45deg, 0);
+}
+
+#heart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+}
+
+#heart:before,
+#heart:after {
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: red;
+    -moz-border-radius: 50px 50px 0 0;
+    -webkit-border-radius: 50px 50px 0 0;
+    border-radius: 50px 50px 0 0;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-transform-origin: 0 100%;
+    -moz-transform-origin: 0 100%;
+    -ms-transform-origin: 0 100%;
+    -o-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+}
+
+#heart:after {
+    left: 0;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform-origin: 100% 100%;
+    -moz-transform-origin: 100% 100%;
+    -ms-transform-origin: 100% 100%;
+    -o-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+}
+
+#star-five {
+    margin: 50px 0;
+    position: relative;
+    display: block;
+    color: red;
+    width: 0px;
+    height: 0px;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid red;
+    border-left: 100px solid transparent;
+    -moz-transform: rotate(35deg);
+    -webkit-transform: rotate(35deg);
+    -ms-transform: rotate(35deg);
+    -o-transform: rotate(35deg);
+    transform: rotate(35deg);
+}
+
+#star-five:before {
+    border-bottom: 80px solid red;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: -45px;
+    left: -65px;
+    display: block;
+    content: '';
+    -webkit-transform: rotate(-35deg);
+    -moz-transform: rotate(-35deg);
+    -ms-transform: rotate(-35deg);
+    -o-transform: rotate(-35deg);
+    transform: rotate(-35deg);
+}
+
+#star-five:after {
+    position: absolute;
+    display: block;
+    color: red;
+    top: 3px;
+    left: -105px;
+    width: 0px;
+    height: 0px;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid red;
+    border-left: 100px solid transparent;
+    -webkit-transform: rotate(-70deg);
+    -moz-transform: rotate(-70deg);
+    -ms-transform: rotate(-70deg);
+    -o-transform: rotate(-70deg);
+    transform: rotate(-70deg);
+    content: '';
+}
+
+#talkbubble {
+    width: 120px;
+    height: 80px;
+    border: 2px dashed #0066FF;
+    position: relative;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+#talkbubble:before {
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 26px;
+    width: 0;
+    height: 0;
+    border-top: 13px solid transparent;
+    border-left: 26px solid red;
+    border-bottom: 13px solid transparent;
+}
+
+#mybubble {
+    margin-left: 100px;
+    width: 200px;
+    height: 100px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    position: relative;
+    border: 2px solid #000000;
+    float: left;
+}
+
+#mybubble_right {
+    width: 200px;
+    height: 100px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    position: relative;
+    border: 2px solid #000000;
+    float: left;
+}
+
+#mybubble:hover:before {
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    margin-top: -13px;
+    /*width: 50px;*/
+    /*height: 50px;*/
+    /*background: #ff0000;*/
+    border-width: 13px 0 13px 26px;
+    border-style: solid;
+    border-color: transparent transparent transparent #ff0000;
+    background: transparent;
+}
+
+#mybubble[data-descr]:hover:after {
+    content: attr(data-descr);
+    width: 100px;
+    height: auto;
+    min-height: 50px;
+    border: 1px solid orangered;
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    margin-top: -25px;
+    margin-left: 26px;
+}
+
+#tip {
+    width: 300px;
+    height: 50px;
+    position: absolute;
+    border: 1px solid orange;
+    border-radius: 5px;
+    clear: left;
+}
+
+#tip:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    position: relative;
+    left: 100%;
+    top: 50%;
+    border-style: solid;
+    border-width: 10px 20px;
+    border-color: #ff0000 #ff0000 transparent transparent;
+    margin-top: -10px;
+}
+</style>
+</head>
+<body>
+<div id="route"></div>
+<div id="translate"></div>
+<div id="scale"></div>
+<div id="skew"></div>
+<div id="heart"></div>
+<div id="star-five"></div>
+<div id="talkbubble"></div>
+<div data-descr="small popups which also hide again" id="mybubble"></div>
+<div id="mybubble_right"></div>
+<div id="tip" content="我是杨光辉"></div>
+<script>
+</script>
+</body>
+</html>

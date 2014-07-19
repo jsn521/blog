@@ -1,0 +1,77 @@
+<p><h3>ygh1224后台管理</h3></p>
+<ul class="nav nav-tabs" id="myTab">
+    <li><a href="#articles" data-toggle="tab">Articles</a></li>
+    <li><a href="#parenttag" data-toggle="tab">Tag</a></li>
+    <li><a href="#photo" data-toggle="tab">Photo</a></li>
+    <!--<li><a href="#messages" data-toggle="tab">Messages</a></li>
+    <li><a href="#settings" data-toggle="tab">Settings</a></li>-->
+</ul>
+<!-- Tab panes -->
+<div class="tab-content">
+    <div class="tab-pane active" id="articles">
+        <% if(articles !== null && typeof articles !== "undefined" && articles.length > 0){ %>
+        <p>共<%= total %>条记录</p>
+        <ul class='articles_list'>
+            <% for(var i = 0;i < articles.length;i++){ %>
+            <li>
+                <div>
+                    <span class="fanShaped"></span>
+                    <a href='/article/<%= articles[i]._id %>' target="_blank"><%= articles[i].title %></a>
+                    <!--<span style="color:#08C;margin-left:5px;">发表时间: </span>-->
+                    <span style="color:#08C;margin-left:20px;"><%= articles[i].info.created_time %></span>
+                    <span><a value=<%= articles[i]._id %> title='删除' class='delete modify'>删除</a></span>
+                    <span><a href='/article/edit/<%= articles[i]._id %>' title='编辑' class='edit modify' target="_blank">编辑</a></span>
+                </div>
+                <hr>
+            </li>
+            <% } %>
+        </ul>
+        <% }else{ %>
+        <p>共0条记录</p>
+        <% } %>
+        <p><a href='/admin/post_article'><input type='button' value='发表文章'></a></p>
+    </div>
+    <div class="tab-pane" id="parenttag">
+        <div class="p_tag">
+            <h3>大标签</h3>
+            <% for(var i = 0;i < parentTag.length;i++){ %>
+            <span title="<%= parentTag[i].name %>"><a><%= parentTag[i].name %></a></span>
+            <% } %>
+            <label for="parentTag" id="beforepTag">请输入大标签名称: </label>
+            <input type="input" id="parentTag" name="parentTag"/>
+            <input type="button" value="添加大标签" id="addPtag"/>
+            <hr>
+            <h3>小标签</h3>
+            <% for(var i = 0;i < childTag.length;i++){ %>
+            <span title="<%= childTag[i].name %>"><a><%= childTag[i].name %></a></span>
+            <% } %>
+            <label for="childTag" id="beforecTag">请输入小标签名称: </label><input type="input" id="childTag" name="childTag"/>
+            <input type="button" value="添加小标签" id="addCtag"/>
+        </div>
+    </div>
+    <div class="tab-pane" id="photo">
+        <form action="/admin/post_img" method="post" enctype="multipart/form-data">
+            <label for="album">选择相册: </label>
+            <% if(typeof album !== "undefined" && album != null){ %>
+            <select name="album" id="album">
+                <% var i;length = album.length %>
+                <% for(i = 0;i < length;i++){ %>
+                <option value="<%= album[i].name %>"><%= album[i].name %></option>
+                <% } %>
+                <option value=""></option>
+            </select>
+            <% } %>
+            <label for="imgTitle">图像标题: </label>
+            <input type="text" name="title"/>
+            <label for="imgIntro">图像简介: </label>
+            <!--<input type="text" name="intro" />-->
+            <textarea name="intro" id="imgIntro"></textarea>
+            <label for="uploadimg">上传图片: </label>
+            <input type="file" name="uploadimg" id="uploadimg"/>
+
+            <p><input type="submit" value="提交"/></p>
+        </form>
+    </div>
+    <!--<div class="tab-pane" id="messages">...</div>
+    <div class="tab-pane" id="settings">...</div>-->
+</div>

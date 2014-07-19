@@ -1,0 +1,30 @@
+<h3><a href='/article/<%= article._id %>'><%= article.title %></a></h3>
+<div class="article-info">
+    <span title="最后更新时间"><i class="pubtime"></i><%= article.created_time %></span>
+    <span title="查看分类:<%= article.parent_tag %>"><i class="category"></i><%= article.parent_tag %></span>
+    <span title="所属分类:<%= article.child_tag %>"><i class="tag"></i><%= article.child_tag %></span>
+<span title="点击次数:<%= article.good %>">
+    <i class="good"></i>
+    <good _id="<%= article._id %>" class="s_good" good="<%= article.good %>"><%= article.good %></good>
+</span>
+</div>
+<div class="summary">
+    <div class="content">
+        <%= article.content %>
+    </div>
+</div>
+<script type="text/javascript">
+    window.onload = function () {
+        $(".s_good").bind("click", function () {
+            var thisSpan = $(this), _id = $(this).attr("_id"), good = $(this).attr("good");
+            var nowgood = parseInt(good) + 1;
+            $.post("/addGood", {_id: _id,good:nowgood}, function (data) {
+                if (data === "success") {
+                    thisSpan.attr("good", nowgood);
+                    thisSpan.html(nowgood);
+                } else {
+                }
+            });
+        });
+    };
+</script>

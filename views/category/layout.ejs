@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title>MyBlog</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css"/>
+    <link rel="stylesheet" href="/stylesheets/cat_article.css"/>
+    <script type="text/javascript" src="/javascripts/jquery.js"></script>
+    <style type="text/css">
+        body {
+            padding-top: 60px;
+            /*padding-bottom: 40px;*/
+        }
+    </style>
+    <style type="text/css">
+        #myModal {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+    <div class='navbar-inner'>
+        <div class="container">
+            <a href="" class="btn btn-navbar" data-toggle='collapse' data-target='.nav-collapse'>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a href="/" class="brand" style="color:orange;">Ygh1224</a>
+
+            <div class="nav-collapse">
+                <ul class="nav">
+                    <% if(typeof active !== 'undefined' && typeof username !== 'undefined'){ %>
+                    <% if(active == 'home'){ %>
+                    <li class="active"><a href="/">Home</a></li>
+                    <% }else{ %>
+                    <li><a href="/">Home</a></li>
+                    <% } %>
+                    <% if(active == 'article'){ %>
+                    <li class="active"><a href="/article">Article</a></li>
+                    <% }else{ %>
+                    <li><a href="/article">Article</a></li>
+                    <% } %>
+                    <% if(active == 'photo'){ %>
+                    <li class="active"><a href="/photo">Photo</a></li>
+                    <% }else{ %>
+                    <li><a href="/photo">Photo</a></li>
+                    <% } %>
+                    <% if(active == 'app'){ %>
+                    <li class="active"><a href="#">App</a></li>
+                    <% }else{ %>
+                    <li><a href="#">App</a></li>
+                    <% } %>
+                    <% if(active == 'admin'){ %>
+                    <li class="active"><a href='/admin'>Administrator</a></li>
+                    <% }else if(username){ %>
+                    <li><a href='/admin'>Administrator</a></li>
+                    <% }} %>
+                </ul>
+            </div>
+        </div>
+        <div></div>
+    </div>
+</div>
+<div id="container" class="container">
+    <div class="content">
+        <%- body %>
+    </div>
+    <hr/>
+    <footer>
+        <!--<p><a href="http://www.baidu.com" target="_blank">Ygh1224</a>2012</p>-->
+        <p>&copy; 2012~2013&nbsp;&nbsp;<a href="http://weibo.com/u/2841610427">新浪微博</a>
+            <a href="http://t.qq.com/yang_1224?preview">腾讯微博</a>
+        </p>
+
+        <p>
+            感谢以下技术支持
+            <a href="http://nodejs.org">Nodejs</a>
+            <a href="http://expressjs.com">Express</a>
+            <a href="https://github.com/visionmedia/ejs">ejs</a>
+            <a href="http://cn.docs.mongodb.org">MongoDB</a>
+            <a href="http://getbootstrap.com/">Bootstrap</a>
+        </p>
+    </footer>
+</div>
+</body>
+</html>

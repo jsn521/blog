@@ -1,0 +1,163 @@
+body {
+    font: 12px "微软雅黑", "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    background: url(../images/bg.png) repeat;
+}
+
+html {
+    font-size: 100%;
+}
+
+.content {
+    position: relative;
+}
+
+.content .menu {
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    width: auto;
+    height: auto;
+    margin-bottom: 2em;
+    -webkit-box-shadow: 0 0 2em;
+    -moz-box-shadow: 0 0 2em;
+    -o-box-shadow: 0 0 2em;
+    box-shadow: 0 0 2em;
+}
+
+.content .menu ul {
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+    overflow: auto;
+}
+
+.menu ul li {
+    display: inline-block;
+}
+
+.content .menu ul a {
+    background: #f3f3f3;
+    display: inline-block;
+    width: 10em;
+    height: 3em;
+    line-height: 3em;
+    color: #28a4c9;
+    font-weight: 800;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+    border-bottom: 2px solid transparent;
+}
+.content .menu ul a:hover{
+    border-bottom: 2px solid orangered;
+}
+.content .menu ul a:hover {
+    background: #28a4c9;
+    color: orangered;
+}
+
+.section {
+    margin-bottom: 0.3125em;
+    /*margin-left: 12.5em;*/
+    margin-left: 0;
+}
+
+.article-info {
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.article-info span {
+    margin-right: 0.3125em;
+}
+
+.article-info span:hover {
+    cursor: pointer;
+}
+
+.article-info i {
+    vertical-align: middle;
+    display: inline-block;
+    width: 1.125em;
+    height: 1.125em;
+    overflow: hidden;
+    background-image: url(../images/background.png);
+    margin-top: -4px;
+    line-height: 0;
+}
+
+.pubtime {
+    background-position: -46px -22px;
+}
+
+.category {
+    background-position: -118px -70px;
+}
+
+.tag {
+    background-position: 0px -46px;
+}
+
+.good {
+    background-position: -190px -142px;
+}
+
+.summary {
+    /*background-color: #F6F6F6;*/
+    padding: 10px 10px 10px 20px;
+    /*border-radius: 10px;*/
+    border: 1px solid #F6F6F6;
+    /*-webkit-transition: all .5s;*/
+    /*-moz-transition: all .5s;*/
+    /*-o-transition: all .5s;*/
+    /*transition: all .5s;*/
+    /*-webkit-box-shadow: 0 0 .5em;*/
+    /*-moz-box-shadow: 0 0 .5em;*/
+    /*-o-box-shadow: 0 0 .5em;*/
+    /*box-shadow: 0 0 .5em;*/
+}
+
+.summary:hover {
+    border: 1px solid orange;
+}
+
+.brand {
+    font-style: italic;
+    color: orange;
+}
+
+.page {
+    width: 100%;
+    height: 20px;
+    margin-top: 10px;
+}
+
+.page .active a {
+    color: orange;
+}
+
+.page li {
+    list-style: none;
+    display: table-cell;
+    vertical-align: middle;
+    float: left;
+    padding-left: 6px;
+    width: 0.875em;
+    height: 1.25em;
+    border: 1px solid #0088cc;
+    cursor: pointer;
+    margin-right: 0.3125em;
+    border-radius: 0.3125em;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.page .skip {
+    border: 0px solid orange;
+}

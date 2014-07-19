@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title></title>
+    <style type="text/css">
+        body {
+            font: 12px "微软雅黑", "Lucida Grande", Helvetica, Arial, sans-serif;
+        }
+
+        .page li {
+            list-style: none;
+            display: table-cell;
+            vertical-align: middle;
+            float: left;
+            padding-left: 6px;
+            width: 14px;
+            height: 20px;
+            border: 1px solid #0088cc;
+            cursor: pointer;
+            margin-right: 5px;
+            border-radius: 5px;
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .page .skip {
+            border: 0px solid orange;
+        }
+
+        #left {
+            width: 180px;
+            float: left;
+            height: 600px;
+            background-color: #3278b3;
+            z-index: 2;
+            position: absolute;
+        }
+
+        #right {
+            width: 100%;
+            height: 600px;
+            float: right;
+            background-color: #d9edf7;
+            z-index: 1;
+            position: absolute;
+            /*padding-left: 180px;*/
+        }
+
+        #content {
+            margin-left: 180px;
+        }
+    </style>
+</head>
+<body>
+<!--<div>-->
+<!--<span>-->
+<!--<i style="vertical-align: middle;display:inline-block;width:18px; height:18px;background:url(background.png) 0px -22px"></i>-->
+<!--test-->
+<!--</span>-->
+<!--<ul class='page'>-->
+<!--<li>1</li>-->
+<!--<li>2</li>-->
+<!--<li>3</li>-->
+<!--<li class='skip'>...</li>-->
+<!--<li>4</li>-->
+<!--<li>5</li>-->
+<!--<li>6</li>-->
+<!--</ul>-->
+<!--</div>-->
+<div style="position: relative">
+    <div id="left">
+
+    </div>
+    <div id="right">
+        <div id="content">
+            <h1>Hello World!</h1>
+        </div>
+    </div>
+</div>
+<img src="/images/loading.gif" alt="加载图片"/>
+
+<h1>欢迎来到Ygh的个人站点！</h1>
+
+<form action="/admin/post_img" method="post">
+    <input type="file" name="file" id="file"/>
+    <input type="submit" value="Submit"/>
+</form>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<div id="photo">
+    <% var length = imgs.length, piece = parseInt(length / 5); %>
+    <% if(length > 0){ %>
+    <ul class="column">
+        <% for(var i = 0;i < piece;i++){ %>
+        <li>
+            <div><a owner="<%= imgs[i].owner %>" title="<%= imgs[i].title %>" tag="<%= imgs[i].album %>"
+                    intro="<%= imgs[i].intro %>">
+                    <img src="<%= imgs[i].src %>" title="<%= imgs[i].intro %>"/></a>
+            </div>
+            <!--<div class="mask"></div>-->
+            <div class="img_info">
+                <div>
+    <span>
+        标题: <a href="#" target="_blank"><%= imgs[i].title %></a>
+    </span>
+                </div>
+                <div>
+                    <span class="tag" tag="<%= imgs[i].album %>">相册: <a href="#"><%= imgs[i].album %></a></span>
+                </div>
+            </div>
+        </li>
+        <% } %>
+    </ul>
+    <ul class="column">
+        <% for(i = piece;i < piece * 2;i++){ %>
+        <li>
+            <div>
+                <a title="<%= imgs[i].title %>" tag="<%= imgs[i].album %>" intro="<%= imgs[i].intro %>"
+                   owner="<%= imgs[i].owner %>">
+                    <img src="<%= imgs[i].src %>" title="<%= imgs[i].intro %>"/></a>
+            </div>
+            <!--<div class="mask"></div>-->
+            <div class="img_info">
+                <div><span>标题: <a href="#" target="_blank"><%= imgs[i].title %></a></span></div>
+                <div><span class="tag" tag="<%= imgs[i].album %>">相册: <a href="#"><%= imgs[i].album %></a></span></div>
+            </div>
+        </li>
+        <% } %>
+    </ul>
+    <ul class="column">
+        <% for(i = piece * 2;i < piece * 3;i++){ %>
+        <li>
+            <div><a title="<%= imgs[i].title %>" tag="<%= imgs[i].album %>" intro="<%= imgs[i].intro %>"
+                    owner="<%= imgs[i].owner %>">
+                    <img src="<%= imgs[i].src %>" title="<%= imgs[i].intro %>"/></a></div>
+            <!--<div class="mask"></div>-->
+            <div class="img_info">
+                <div><span>标题: <a href="#" target="_blank"><%= imgs[i].title %></a></span></div>
+                <div><span class="tag" tag="<%= imgs[i].album %>">相册: <a href="#"><%= imgs[i].album %></a></span></div>
+            </div>
+        </li>
+        <% } %>
+    </ul>
+    <ul class="column">
+        <% for(i = piece * 3;i < piece * 4;i++){ %>
+        <li>
+            <div>
+                <a title="<%= imgs[i].title %>" tag="<%= imgs[i].album %>" intro="<%= imgs[i].intro %>"
+                   owner="<%= imgs[i].owner %>">
+                    <img src="<%= imgs[i].src %>" title="<%= imgs[i].intro %>"/>
+                </a></div>
+            <!--<div class="mask"></div>-->
+            <div class="img_info">
+                <div><span>标题: <a href="#" target="_blank"><%= imgs[i].title %></a></span></div>
+                <div><span class="tag" tag="<%= imgs[i].album %>">相册: <a href="#"><%= imgs[i].album %></a></span></div>
+            </div>
+        </li>
+        <% } %>
+    </ul>
+    <ul class="column">
+        <% for(i = piece * 4;i < piece * 5;i++){ %>
+        <li>
+            <div>
+                <a title="<%= imgs[i].title %>" tag="<%= imgs[i].album %>" intro="<%= imgs[i].intro %>"
+                   owner="<%= imgs[i].owner %>">
+                    <img src="<%= imgs[i].src %>" title="<%= imgs[i].intro %>"/>
+                </a>
+            </div>
+            <!--<div class="mask"></div>-->
+            <div class="img_info">
+                <div><span>标题: <a href="#" target="_blank"><%= imgs[i].title %></a></span></div>
+                <div><span class="tag" tag="<%= imgs[i].album %>">相册: <a href="#"><%= imgs[i].album %></a></span></div>
+            </div>
+        </li>
+        <% } %>
+    </ul>
+
+</div>
+<div class="page">
+    <% if(curPage > 1){ %>
+    <a href="/photo?page=<%= curPage - 1 %>"><input type="button" value="上一页"/></a>
+    <% } %>
+    <% if(total > (curPage * 40)){ %>
+    <a href="/photo?page=<%= curPage + 1 %>"><input type="button" value="下一页"/></a>
+    <% } %>
+</div>
+<link rel="stylesheet" href="/stylesheets/photo.css"/>
+<% } %>
+<script type="text/javascript" src="/javascripts/jquery.js"></script>
+<script type="text/javascript" src="/javascripts/bootstrap.js"></script>
+<script type="text/javascript" src="/javascripts/photo.js"></script>

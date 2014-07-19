@@ -1,0 +1,44 @@
+.articles_list li {
+    margin-bottom: 5px;
+    line-height: 20px;
+    list-style: none;
+    display: block;
+    vertical-align: middle;
+}
+
+.articles_list li span {
+
+}
+
+.articles_list .modify {
+    display: block;
+    float: right;
+}
+
+.articles_list .delete {
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+.articles_list .edit {
+    margin-right: 10px;
+}
+
+.fanShaped {
+    background: none repeat scroll 0 0 #00B7FF;
+    -webkit-border-radius: 15px 0 0 0;
+    -moz-border-radius: 15px 0 0 0;
+    border-radius: 15px 0 0 0;
+    height: 15px;
+    width: 15px;
+    float: left;
+    margin-top: 3px;
+    margin-right: 20px;
+}
+.brand{
+    color: orange;
+}
+.p_tag span{
+	margin-right:1.5em;
+	cursor:pointer;
+}

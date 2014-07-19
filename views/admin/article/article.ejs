@@ -1,0 +1,30 @@
+<form method="post" action="/admin/post_article">
+    <h3>文章录入: </h3>
+
+    <p>
+
+    <div style="margin-top:5px;"><h4 style="float:left;margin-top:5px;">请输入标题：</h4></div>
+    <input type="text" name="title" style="width:550px;"/></p>
+    <p><h4 style="float:left;margin-top:5px;">请选择大标题：</h4>
+    <select name="parent_tag" id="parent_tag">
+        <% for(var i = 0;i < parentTags.length;i++){ %>
+        <% var name = parentTags[i].name; %>
+        <% if(name.trim().length > 0){ %>
+        <option value="<%= name %>"><%= name %></option>
+        <% } %>
+        <% } %>
+    </select>
+    </p>
+    <p><h4 style="float:left;margin-top:5px;">请选择子标题：</h4>
+    <select name="child_tag" id="child_tag">
+        <% for(var i = 0;i < childTags.length;i++){ %>
+        <% var name = childTags[i].name; %>
+        <% if(name.trim().length > 0){ %>
+        <option value="<%= childTags[i].name %>"><%= childTags[i].name %></option>
+        <% } %>
+        <% } %>
+    </select>
+    </p>
+    <textarea name="content" class="jqte-test" style="width:300px !important";></textarea>
+    <p><input type="submit" class="btn" value="提交"/></p>
+</form>

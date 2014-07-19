@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title></title>
+    <style type="text/css">
+        .header {
+            width: 100%;
+            height: 30px;
+            background: #ff0000;
+        }
+
+        .container {
+            width: 100%;
+            height: auto;
+            display: box;
+            display: flex;
+            display: -webkit-box;
+            display: -moz-box;
+        }
+
+        .siadebar {
+            width: 200px;
+            height: 30px;
+            background: green;
+        }
+
+        .content {
+            -webkit-box-flex: 1;
+            -moz-box-flex: 1;
+            height: 30px;
+            background: blue;
+        }
+
+        @media screen and (max-width: 600px) {
+            .header {
+                width: 100%;
+            }
+
+            .container {
+                width: 100%;
+                display: block;
+                height: auto;
+            }
+
+            .siadebar, .content {
+                width: 100%;
+                float: left;
+            }
+        }
+
+        .first {
+            height: auto;
+            overflow: auto;
+            float: left;
+        }
+
+        .first li {
+            list-style: none;
+            display: block;
+            float: left;
+        }
+
+        .second {
+            float: left;
+            width: 400px;
+        }
+
+        .second li {
+            list-style: none;
+            display: inline-block;
+            width: 200px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div class="header"></div>
+<div class="container">
+    <div class="siadebar"></div>
+    <div class="content"></div>
+</div>
+
+<ul class="first">
+    <li>
+        <a href="#"><img width="100" height="100" src="a.jpg"/></a>
+
+        <p>文字一</p>
+    </li>
+    <li>
+        <a href="#"><img width="100" height="100" src="a.jpg"/></a>
+
+        <p>文字二</p>
+    </li>
+</ul>
+<ul class="second">
+    <li>文字三</li>
+    <li>文字四</li>
+    <li>文字五</li>
+    <li>文字六</li>
+</ul>
+</body>
+</html>

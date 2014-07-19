@@ -1,0 +1,164 @@
+<h3>欢迎来到Ygh的个人站点！</h3>
+<!--<h2>好吧，我需要对首页的显示文件进行一下修改！结果还真的成功了....</h2>-->
+<hr/>
+<div class="left">
+    <h3>基本信息: </h3>
+    <div class="myinfo">
+        <table border="1" class="info_table" cellpadding="5">
+            <tbody>
+            <tr>
+                <td style="width: 50%">姓名:</td>
+                <td>杨光辉</td>
+            </tr>
+            <tr>
+                <td>性别:</td>
+                <td>男</td>
+            </tr>
+            <tr>
+                <td>出生年月:</td>
+                <td>1991-03-12</td>
+            </tr>
+            <tr>
+                <td>毕业院校:</td>
+                <td>浙江理工大学</td>
+            </tr>
+            <tr>
+                <td>研究方向:</td>
+                <td>计算机网络, 协议测试</td>
+            </tr>
+            <tr>
+                <td>博客园:</td>
+                <td><a href="http://www.cnblogs.com/jsn521/" target="_blank">J_sn</a></td>
+            </tr>
+            <tr>
+                <td>求职意向: </td>
+                <td>web前端工程师, php工程师, C#工程师</td>
+            </tr>
+            <tr>
+                <td>联系方式: </td>
+                <td>18937856296</td>
+            </tr>
+            <tr>
+                <td>QQ: </td>
+                <td>956867502</td>
+            </tr>
+            <tr>
+                <td>邮箱: </td>
+                <td>956867502@qq.com</td>
+            </tr>
+            <!--<tr>-->
+            <!--<td>个人主页: </td>-->
+            <!--<td><a href="http://115.28.132.182:3000" target="_blank">Ygh1224</a></td>-->
+            <!--</tr>-->
+            </tbody>
+        </table>
+    </div>
+    <h3>教育经历: </h3>
+
+    <div class="myinfo">
+        <table border="1" class="info_table education">
+            <thead>
+            <tr>
+                <th style="width: 33%">年份</th>
+                <th style="width: 33%">地点</th>
+                <th>学历</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td style="width: 33%">2005 ~ 2008</td>
+                <td style="width: 33%">开封高级中学</td>
+                <td>高中</td>
+            </tr>
+            <tr>
+                <td>2008 ~ 2012</td>
+                <td>浙江理工大学</td>
+                <td>本科</td>
+            </tr>
+            <tr>
+                <td>2012 ~ 2015</td>
+                <td>浙江理工大学</td>
+                <td>硕士</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <h3>具备技能: </h3>
+
+    <div class="myinfo">
+        <table class="info_table" border="1">
+            <tbody>
+            <tr>
+                <td style="width: 10%;text-align: center;">技能</td>
+                <td>
+                    <ol>
+                        <li>熟悉C#语言,掌握WinForm,多线程,LINQ,EntityFrameWork开发技术.</li>
+                        <li>熟悉MSSQL,MySql,能够独立完成SQL语句编写.</li>
+                        <li>熟悉PHP,对Elgg,ThinkPHP,Drupal框架有一定了解.熟悉Smarty模板引擎.</li>
+                        <li>熟悉Javascript,熟悉html,对DOM结构有清楚的认识,熟悉CSS,对CSS3有一定了解.
+                            熟练使用jQuery,对YUI,BootStrap等前端框架有一定了解,
+                        </li>
+                        <li>熟悉Node.js,对异步I/O以及事件驱动有清楚的认识.</li>
+                        <li>熟悉MongoDB,具备MongoDB开发基础.</li>
+                        <li>熟悉Ejs,Fade框架.</li>
+                        <li>了解Java,了解SSH.</li>
+                    </ol>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <h3>项目经验</h3>
+
+    <div class="myinfo">
+        <table class="info_table" border="1">
+            <tbody>
+            <tr>
+                <td>
+                    <ol>
+                        <li>
+                            <h4>项目名称: 海洋二所热液探测系统</h4>
+
+                            <p>开发语言: C#</p>
+
+                            <p>开发工具: Visual Studio 2010</p>
+
+                            <p>开发技术: 多线程, 接口, ArcGIS Engine, ArcGIS SDE</p>
+
+                            <p>项目内容: 根据海底探测设备收集的原始数据生成海底地形三维特征图, 平面特征图, 时间关系图以及航程轨迹图.</p>
+                        </li>
+                        <li>
+                            <h4>项目名称: FreeBox(联通校园移动社交项目)</h4>
+
+                            <p>开发语言: PHP</p>
+
+                            <p>开发工具: PhpStorm</p>
+
+                            <p>开发技术: Elgg社交框架, 百度云推送</p>
+
+                            <p>项目内容: 主要负责服务器端接口实现, 客户端则为Android实现. 迎合当前大学生的交友需求, 采用移动端交友方式进行一系列社交活动, 包括群组组建, 好友添加,
+                                语音聊天以及普通短消息发送等功能.
+                            </p>
+                        </li>
+                        <li>
+                            <h4>项目名称: 个人站点</h4>
+
+                            <p>平台支持: Node.js, MongoDB, EJS, Express, BootStrap</p>
+                        </li>
+                    </ol>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="right">
+    <h3>当前时间</h3>
+    <div class="clock">
+        <canvas id="clock" width="300" height="300"></canvas>
+        <script src="/javascripts/clock.js"></script>
+        <div class="date_info">
+
+        </div>
+    </div>
+</div>

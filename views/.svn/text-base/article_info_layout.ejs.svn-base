@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title><%= title %>-MyBlog</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css"/>
+    <style type="text/css">
+        body{padding-top: 60px; padding-bottom: 40px;}
+    </style>
+    <!--<link rel="stylesheet" href="/stylesheets/bootstrap-responsive.css"/>-->
+    <link rel="stylesheet" href="/stylesheets/myblog.css"/>
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+    <div class='navbar-inner'>
+        <div class="container">
+            <a href="" class="btn btn-navbar" data-toggle='collapse' data-target='.nav-collapse'>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a href="/" class="brand" style="color:orange;">Ygh1224</a>
+            <div class="nav-collapse">
+                <ul class="nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/article">Article</a></li>
+                    <li><a href="/photo">Photo</a></li>
+                    <li><a href="#">App</a></li>
+                    <li><a href='/admin'>Administrator</a></li>
+                </ul>
+            </div>
+        </div>
+        <div></div>
+    </div>
+</div>
+<div id="container" class="container">
+    <%-body%>
+    <hr/>
+    <footer>
+        <!--<p><a href="http:www.baidu.com" target="_blank">Ygh1224</a>2012</p>-->
+        <p>&copy; 2012~2013<a href="http://weibo.com/u/2841610427">新浪微博</a>
+        <a href="http://t.qq.com/yang_1224?preview">腾讯微博</a>
+        <a style="cursor:pointer;">登录</a>
+        </p>
+        <p>
+        感谢以下技术支持
+                    <a href="http://nodejs.org">Nodejs</a>
+                    <a href="http://expressjs.com">Express</a>
+                    <a href="https://github.com/visionmedia/ejs">ejs</a>
+                    <a href="http://cn.docs.mongodb.org">MongoDB</a>
+                    <a href="http://getbootstrap.com/">Bootstrap</a>
+        </p>
+    </footer>
+</div>
+<script type="text/javascript" src="/javascripts/jquery.js"></script>
+<script type="text/javascript" src="/javascripts/home.js"></script>
+</body>
+</html>

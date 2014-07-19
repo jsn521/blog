@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <style type="text/css">
+        div, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .comment {
+            width: 600px;
+            height: 400px;
+            overflow: auto;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border: 1px solid #000000;
+        }
+
+        ul > li {
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+            color: #000000;
+        }
+
+        ul li a {
+            display: inline-block;
+            text-decoration: none;
+            position: relative;
+        }
+
+        ul a:after {
+            content: "";
+            border-bottom: 8px solid #eeeeee;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -8px;
+        }
+
+        ul > li:hover {
+            color: #ff0000;
+        }
+
+        #share_div {
+            margin-top: 8px;
+        }
+
+        #meeting_div {
+            display: none;
+            margin-top: 8px;
+        }
+
+        .angle {
+            width: 0px;
+            height: 8px;
+            border-top: 8px solid #eeeeee;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            margin-top: 50px;
+        }
+
+        #recttest {
+            width: 600px;
+            height: 150px;
+            background: #e6e6e6;
+            margin: 20px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="recttest">这时一个block元素</div>
+<span id="inlinetest">这时一个inline元素</span>
+<script type="text/javascript">
+    var rectTest = document.getElementById("recttest"),
+            inlineTest = document.getElementById("inlinetest");
+    var allStyle = window.getComputedStyle(rectTest, null);
+    console.log(rectTest.getBoundingClientRect(), rectTest.getClientRects());
+    console.log(inlineTest.getBoundingClientRect(), inlineTest.getClientRects(), inlineTest);
+    console.log("offsetHeight", rectTest.offsetHeight, "offsetWidth", rectTest.offsetWidth);
+    console.log("Width", allStyle.width, "Height", allStyle.height);
+    console.log("Height", rectTest.style.height, "Width", rectTest.style.width);
+</script>
+<div class="comment">
+    <ul>
+        <li id="share"><a href="">分享</a></li>
+        <li id="meeting"><a href="">开会</a></li>
+    </ul>
+    <div id="share_div">
+        <textarea defaultValue="i am share" value="i am share" name="share_content" id="share_content" cols="30"
+                  rows="10">i am share</textarea>
+    </div>
+    <div id="meeting_div">
+        <textarea defaultValue="i am meeting" value="i am meeting" name="meeting_content" id="meeting_content" cols="30"
+                  rows="10">i am meeting</textarea>
+    </div>
+    <div style="text-align: right">
+        <input type="button" value="发布" id="publish"/>
+    </div>
+</div>
+
+<div class="angle"></div>
+
+<script type="text/javascript">
+    window.onload = function () {
+        var shareLi = document.getElementById("share"), meetingLi = document.getElementById("meeting"),
+                shareDiv = document.getElementById('share_div'), meetingDiv = document.getElementById("meeting_div"),
+                shareContent = document.getElementById("share_content"), meetingContent = document.getElementById("meeting_content");
+        shareLi.onclick = function () {
+            shareDiv.style.display = "block";
+            meetingDiv.style.display = "none";
+        };
+        shareContent.onfocus = function () {
+            this.value = "";
+        };
+        shareContent.onblur = function () {
+            if (this.value.trim().length == 0)
+                this.value = this.getAttribute('defaultValue');
+        };
+        shareContent.onkeyup = function () {
+            console.log(this.value.trim().length);
+        };
+        meetingContent.onfocus = function () {
+            this.value = "";
+        };
+        meetingContent.onblur = function () {
+            if (this.value.trim().length == 0)
+                this.value = this.getAttribute('defaultValue');
+        };
+        meetingLi.onclick = function () {
+            shareDiv.style.display = "none";
+            meetingDiv.style.display = "block";
+        };
+    };
+    var o = {a: 1, b: {c: 2, d: {e: 1}}};
+    var tempArr = [];
+    //    for (prop in o) {
+    //        if (typeof o[prop] == "object")
+    //            tempArr.push(prop);
+    //    }
+    function getProps(obj) {
+        for (prop in obj) {
+            tempArr.push(prop);
+            if (typeof o[prop] == "object") {
+                arguments.callee(o[prop]);
+            }
+        }
+    }
+    getProps(o);
+    console.log(tempArr);
+</script>
+</body>
+</html>

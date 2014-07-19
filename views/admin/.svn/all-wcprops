@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/MyBlog/!svn/ver/2/trunk/views/admin
+END
+layout.ejs
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/MyBlog/!svn/ver/2/trunk/views/admin/layout.ejs
+END
+index.ejs
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/MyBlog/!svn/ver/2/trunk/views/admin/index.ejs
+END
+login.ejs
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/MyBlog/!svn/ver/2/trunk/views/admin/login.ejs
+END

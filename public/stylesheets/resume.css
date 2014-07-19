@@ -1,0 +1,121 @@
+div, h1, ol {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    line-height: 1.75em;
+}
+
+.resume {
+    width: 73.125em;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+@media screen and (max-width: 960px) and (min-width: 600px) {
+    .resume {
+        width: 37.5em;
+    }
+
+    .head {
+        width: 37.5em;
+    }
+
+    .info {
+        width: 37.5em;
+    }
+
+    .profile {
+        width: 6.5em
+    }
+
+    .others {
+        width: 29.5em;
+    }
+}
+
+.resume .head {
+    height: 2em;
+    width: 100%;
+    background-color: rgb(0, 136, 204);
+    border-radius: 0.625em 0.625em 0 0;
+}
+
+.head .title {
+    height: 1.5em;
+    width: 6.25em;
+    font-size: 1.5em;
+    color: #ffffff;
+    margin-left: 2.5em;
+}
+
+.resume .info {
+    border-top: 2px dashed rgb(0, 136, 204);
+    padding-top: 0.625em;
+    width: 100%;
+    height: auto;
+    overflow: auto;
+}
+
+.info .profile {
+    width: 12.3em;
+    height: auto;
+    float: left;
+    border-right: 0.125em dashed rgb(0, 136, 204);
+    /*background: -moz-linear-gradient(left top, #0055cc, #2aabd2);*/
+    /*background: -webkit-linear-gradient(left top, #0055cc, #2aabd2);*/
+    /*background: -webkit-gradient(linear, left top, right bottom, from(#0055cc), to(#2aabd2));*/
+}
+
+.info .head_img {
+    border: 0.3125em solid rgba(0, 0, 0, 0);
+    margin: 1.25em 0 0 1.25em;
+    width: 9.375em;
+    height: auto;
+}
+
+.info .head_img img {
+    height: auto;
+    width: 9.375em;
+}
+
+.info .detail {
+    padding: 0.625em 0.625em 0;
+    text-align: right;
+}
+
+.detail span {
+    color: rgb(0, 136, 204);
+}
+
+.info > .others {
+    width: 57.5em;
+    /*height: 800px;*/
+    /*overflow: auto;*/
+    margin-left: 3.125em;
+    float: left;
+    font: normal none 100 1em "微软雅黑";
+}
+
+.others > ol {
+    margin-top: 0.75em;
+    margin-left: 1.5em;
+}
+
+.others li {
+    line-height: 2em;
+    font-size: 1em;
+}
+
+.others h4 {
+    padding-bottom: 0.625em;
+}
+
+.others p {
+    font-family: "微软雅黑";
+    font-size: 1em;
+    font-weight: 500;
+    line-height: 0.75em;
+}

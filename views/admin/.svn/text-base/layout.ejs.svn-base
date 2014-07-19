@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title><%= title %>-MyBlog</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css"/>
+    <style type="text/css">
+        body {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+    </style>
+    <!--<link rel="stylesheet" href="/stylesheets/bootstrap-responsive.css"/>-->
+    <link rel="stylesheet" href="/stylesheets/admin.css"/>
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+    <div class='navbar-inner'>
+        <div class="container">
+            <a href="" class="btn btn-navbar" data-toggle='collapse' data-target='.nav-collapse'>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a href="/" class="brand" style="font-style:italic;color:orange;">Ygh1224</a>
+
+            <div class="nav-collapse">
+                <ul class="nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/article">Article</a></li>
+                    <li><a href="/photo">Photo</a></li>
+                    <li><a href="#">App</a></li>
+                    <li class="active"><a href='/admin'>Administrator</a></li>
+                </ul>
+            </div>
+        </div>
+        <div></div>
+    </div>
+</div>
+<div id="container" class="container">
+    <%- body %>
+    <hr/>
+    <footer>
+        <!--<p><a href="http:www.baidu.com" target="_blank">Ygh1224</a>2012</p>-->
+        <p>&copy; 2012~2013<a href="http://weibo.com/u/2841610427">新浪微博</a>
+            <a href="http://t.qq.com/yang_1224?preview">腾讯微博</a>
+            <% if(!username){ %>
+            <a style="cursor:pointer;" id="btnLogin">登录</a>
+            <% }else{ %>
+            <span>当前登录用户为: <%= username %></span>
+            <a href="/logout">登出</a>
+            <% } %>
+        </p>
+
+        <p>
+            感谢以下技术支持
+            <a href="http://nodejs.org">Nodejs</a>
+            <a href="http://expressjs.com">Express</a>
+            <a href="https://github.com/visionmedia/ejs">ejs</a>
+            <a href="http://cn.docs.mongodb.org">MongoDB</a>
+            <a href="http://getbootstrap.com/">Bootstrap</a>
+        </p>
+    </footer>
+</div>
+<script type="text/javascript" src="/javascripts/jquery.js"></script>
+<script type="text/javascript" src="/javascripts/bootstrap.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#myTab a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#myTab a').first().tab('show');
+        $('.delete').click(function (e) {
+            if (confirm("你确定删除该文档吗？")) {
+                e.preventDefault();
+                var _id = $(this).attr('value');
+                var _this = $(this);
+                $.post('/article/delete/' + _id, function (data) {
+                    if (data === "success") {
+                        _this.parent().parent().parent().remove();
+                    }
+                });
+            }
+        });
+        $("#addPtag").bind('click', function () {
+            var pTag = $("#parentTag");
+            var tagName = pTag.val().trim();
+            if (tagName.length == 0) {
+                alert('您输入的大标签名不合法');
+            }
+            else {
+                $.post('/admin/addPtag', {name: tagName}, function (data) {
+                    if (data === "success") {
+                        alert("标签添加成功.");
+                        var span = document.createElement("span");
+                        span.title = tagName;
+                        if (window.ActiveXObject)
+                            span.innerText = "<a>" + tagName + "</a>";
+                        else
+                            span.innerHTML = "<a>" + tagName + "</a>";
+                        pTag.val("");
+                        $(span).insertBefore("#beforepTag");
+                    }
+                    else {
+                        alert("标签添加失败.");
+                    }
+                });
+            }
+        });
+        $("#addCtag").bind('click', function () {
+            var cTag = $("#childTag");
+            var tagName = cTag.val().trim();
+            if (tagName.length == 0) {
+                alert('您输入的小标签名不合法');
+            }
+            else {
+                $.post('/admin/addCtag', {name: tagName}, function (data) {
+                    if (data === "success") {
+                        alert("标签添加成功.");
+                        var span = document.createElement("span");
+                        span.title = tagName;
+                        if (window.ActiveXObject)
+                            span.innerText = "<a>" + tagName + "</a>";
+                        else
+                            span.innerHTML = "<a>" + tagName + "</a>";
+                        cTag.val("");
+                        $(span).insertBefore("#beforecTag");
+                    }
+                    else {
+                        alert("标签添加失败.");
+                    }
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>

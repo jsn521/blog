@@ -1,0 +1,21 @@
+<fieldset>
+    <legend>文章信息</legend>
+</fieldset>
+<h3>文章题目</h3>
+<input type="text" value="<%= article.title %>" id="ar_title"/>
+<div class="article-info">
+    <!--<span title="最后更新时间"><i class="pubtime"></i><%= article.created_time %></span>-->
+    <!--<span title="查看分类:<%= article.parent_tag %>"><i class="category"></i><%= article.parent_tag %></span>-->
+    <!--<span title="所属分类:<%= article.child_tag %>"><i class="tag"></i><%= article.child_tag %></span>-->
+    <!--<span title="点击次数:<%= article.good %>"><i class="good"></i><%= article.good %></span>-->
+    <h3>大标签: </h3>
+    <input type="text" value="<%= article.parent_tag %>" id="parentTag"/>
+    <h3>小标签: </h3>
+    <input type="text" value="<%= article.child_tag %>" id="childTag"/>
+</div>
+<h3>文章内容</h3>
+<form method="post">
+    <input type="hidden" value="<%= article._id %>" name="_id"/>
+    <textarea name="content" class="jqte-test" style="width:300px !important;"><%= article.content %></textarea>
+    <input type="submit" value="提交"/>
+</form>

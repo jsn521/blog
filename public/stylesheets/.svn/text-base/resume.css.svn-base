@@ -1,0 +1,144 @@
+div, h1, ol {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    line-height: 1.75em;
+}
+
+.resume {
+    width: 73.125em;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.resume .head {
+    height: 2em;
+    width: 100%;
+    background-color: rgb(0, 136, 204);
+    border-radius: 0.625em 0.625em 0 0;
+}
+
+.head .title {
+    height: 1.5em;
+    width: 6.25em;
+    font-size: 1.5em;
+    color: #ffffff;
+    margin-left: 2.5em;
+}
+
+.resume .info {
+    border-top: 2px dashed rgb(0, 136, 204);
+    padding-top: 0.625em;
+    width: 100%;
+    height: auto;
+    overflow: auto;
+}
+
+.info .profile {
+    width: 12.3em;
+    height: auto;
+    float: left;
+    border-right: 0.125em dashed rgb(0, 136, 204);
+}
+
+.info .head_img {
+    border: 0.3125em solid rgba(0, 0, 0, 0);
+    margin: 1.25em 0 0 1.25em;
+    width: 9.375em;
+    height: auto;
+}
+
+.info .head_img img {
+    height: auto;
+    width: 9.375em;
+}
+
+.info .detail {
+    padding: 0.625em 0.625em 0;
+    text-align: right;
+}
+
+.detail span {
+    color: rgb(0, 136, 204);
+}
+
+.info > .others {
+    width: 57.5em;
+    /*height: 800px;*/
+    /*overflow: auto;*/
+    margin-left: 3.125em;
+    float: left;
+    font: normal none 100 1em "微软雅黑";
+}
+
+.others > ol {
+    margin-top: 0.75em;
+    margin-left: 1.5em;
+}
+
+.others li {
+    line-height: 2em;
+    font-size: 1em;
+}
+
+.others h4{
+    padding-bottom: 0.625em;
+}
+.others p{
+    font-family: "微软雅黑";
+    font-size: 1em;
+    font-weight: 500;
+    line-height: 0.75em;
+}
+
+/*.others>.skill {*/
+/*width: 720px;*/
+/*height: auto;*/
+/*overflow: auto;*/
+/*}*/
+
+/*.skill .item {*/
+/*width: 250px;*/
+/*float: left;*/
+/*height: 20px;*/
+/*margin-right: 10px;*/
+/*margin-bottom: 10px;*/
+/*}*/
+
+/*.skill .skill_name {*/
+/*float: left;*/
+/*width: auto;*/
+/*font-size: 1.25em;*/
+/*color: rgb(0, 136, 204);*/
+/*}*/
+
+/*.skill .radius {*/
+/*width: 18px;*/
+/*height: 18px;*/
+/*border-radius: 9px;*/
+/*float: right;*/
+/*background-color: red;*/
+/*margin-left: 5px;*/
+/*}*/
+
+/*.skill .white {*/
+/*width: 16px;*/
+/*height: 16px;*/
+/*border-radius: 8px;*/
+/*float: right;*/
+/*background-color: #ffffff;*/
+/*margin-left: 5px;*/
+/*border: 1px solid #000000;*/
+/*}*/
+
+/*.skill_detail {*/
+/*margin-left: -5px;*/
+/*font-size: 13px;*/
+/*width: 720px;*/
+/*}*/
+/*.skill_detail>li{*/
+/*line-height: 18px;*/
+/*}*/

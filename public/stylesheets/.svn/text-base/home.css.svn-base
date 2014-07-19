@@ -1,0 +1,61 @@
+@CHARSET "UTF-8";
+.head {
+    width: 100%;
+    height: 20px;
+    font-size: 1em;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.myinfo {
+    width: 600px;
+    height: auto;
+    margin-bottom: 1.25em;
+}
+
+.myinfo .info_table {
+    width: 100%;
+    font-size: 1.25em;
+}
+
+.myinfo .info_table:hover {
+    border: 1px dashed orange;
+}
+
+.myinfo .info_table tr {
+    height: 30px;
+    vertical-align: middle;
+}
+
+.education {
+    text-align: center;
+}
+
+h3 {
+    color: rgb(0, 136, 204);
+}
+.content{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.content .left{
+    width: 650px;
+    height: auto;
+    overflow: auto;
+    float: left;
+    border-right: 1px dashed #0088CC;
+}
+.content .right{
+    padding-left: 0.75em;
+    height: auto;
+    overflow: auto;
+}
+.content .right .clock{
+    border-bottom: 1px dashed #0088CC;
+}
+.content .right .clock .date_info{
+    float: right;
+    height: 300px;
+    width: 215px;
+}

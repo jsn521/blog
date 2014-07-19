@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title></title>
+    <style type="text/css">
+        #timings-demo {
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 800px;
+            width: 200px;
+        }
+
+        .demo-box {
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            text-align: center;
+            color: #fff;
+            background: #96c;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            -moz-box-shadow: inset 0 0 5px rgba(102, 153, 0, 0.5);
+            -webkit-box-shadow: inset 0 0 5px rgba(102, 153, 0, 0.5);
+            box-shadow: inset 0 0 5px rgba(102, 153, 0, 0.5);
+            margin-bottom: 10px;
+        }
+
+        /*ease效 果：*/
+        #ease {
+            -moz-transition: all 5s ease 0.3s;
+            -webkit-transition: all 5s ease 0.3s;
+            -o-transition: all 5s ease 0.3s;
+            transition: all 5s ease 0.3s;
+            background: #f36;
+            /*margin-top: 200px;*/
+        }
+
+        /*ease-in效 果：*/
+        #ease-in {
+            -moz-transition: all 3s ease-in 0.5s;
+            -webkit-transition: all 3s ease-in 0.5s;
+            -o-transition: all 3s ease-in 0.5s;
+            transition: all 3s ease-in 0.5s;
+            background: #369;
+        }
+
+        /*ease-out效 果：*/
+        #ease-out {
+            -moz-transition: all 5s ease-out 0s;
+            -webkit-transition: all 5s ease-out 0s;
+            -o-transition: all 5s ease-out 0s;
+            transition: all 5s ease-out 0s;
+            background: #636;
+        }
+
+        /*ease-in-out效 果：*/
+        #ease-in-out {
+            -moz-transition: all 1s ease-in-out 2s;
+            -webkit-transition: all 1s ease-in-out 2s;
+            -o-transition: all 1s ease-in-out 2s;
+            transition: all 1s ease-in-out 2s;
+            background: #3e6;
+        }
+
+        /*linear效 果：*/
+        #linear {
+            -moz-transition: all 6s linear 0s;
+            -webkit-transition: all 6s linear 0s;
+            -o-transition: all 6s linear 0s;
+            transition: all 6s linear 0s;
+            background: #999;
+        }
+
+        /*cubic-bezier效 果：*/
+        #cubic-bezier {
+            -moz-transition: all 4s cubic-bezier 1s;
+            -webkit-transition: all 4s cubic-bezier 1s;
+            -o-transition: all 4s cubic-bezier 1s;
+            transition: all 4s cubic-bezier 1s;
+            background: #6d6;
+        }
+
+        #my-bezier {
+            -moz-transition: all 4s cubic-bezier(0.2, 0.2, 0.5, 0.5) 1s;
+            -webkit-transition: all 4s easeInElastic 1s;
+            -o-transition: all 4s cubic-bezier(0.2, 0.2, 0.5, 0.5) 1s;
+            transition: all 4s easeInElastic(0, 0, 1, 1) 1s;
+            background: #0066FF;
+        }
+
+        /*hover状 态下 或单 击 click按 钮后 demo-box产 生属 性变 化*/
+        #timings-demo.timings-demo-hover .demo-box,
+        #timings-demo:hover .demo-box {
+            -moz-transform: rotate(360deg) scale(1.2);
+            -webkit-transform: rotate(360deg) scale(1.2);
+            -o-transform: rotate(360deg) scale(1.2);
+            transform: rotate(360deg) scale(1.2);
+            background: #369;
+            border: 1px solid rgba(255, 230, 255, 08);
+            -moz-border-radius: 25px;
+            -webkit-border-radius: 25px;
+            border-radius: 25px;
+            margin-left: 280px;
+            height: 30px;
+            line-height: 30px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+<a id="timings-demo-btn">click</a>
+
+<div id="timings-demo">
+    <div id="ease" class="demo-box">Ease</div>
+    <div id="ease-in" class="demo-box">Ease-in</div>
+    <div id="ease-out" class="demo-box">Ease-out</div>
+    <div id="ease-in-out" class="demo-box">Ease-in-out</div>
+    <div id="linear" class="demo-box">Linear</div>
+    <div id="cubic-bezier" class="demo-box">Cubic-bezier</div>
+    <div id="my-bezier" class="demo-box">Cubic-bezier</div>
+</div>
+<script type="text/javascript" src="public/javascripts/jquery.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#timings-demo-btn").toggle(
+                function () {
+                    $(this).next("div#timings-demo").addClass("timings-demo-hover");
+                }, function () {
+                    $(this).next("div#timings-demo").removeClass("timings-demo-hover");
+                }
+        );
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+/**
+ * Created by root on 14-2-7.
+ */
+var mongodb = require('./db');
+var ObjectID = require('mongodb').ObjectID;
+function Album(album) {
+    this.name = album.name;
+}
+module.exports = Album;
+Album.prototype.save = function (callback) {
+    var album = {
+        name: this.name
+    };
+    mongodb.open(function (err, db) {
+        if (err) {
+            mongodb.close(function () {
+                return callback(err);
+            });
+        } else {
+            db.collection('my_blog_album', function (err, collection) {
+                if (err) {
+                    mongodb.close(function () {
+                        return callback(err);
+                    });
+                } else {
+                    collection.insert(album, {safe: true}, function (err, result) {
+                        if (err) {
+                            mongodb.close(function () {
+                                return callback(err);
+                            });
+                        } else {
+                            mongodb.close(function () {
+                                return callback(null, result);
+                            });
+                        }
+                    });
+                }
+            });
+        }
+    });
+};
+Album.getAll = function (callback) {
+    mongodb.open(function (err, db) {
+        if (err) {
+            mongodb.close(function () {
+                callback(err);
+            });
+        }
+        db.collection('my_blog_album', function (err, collection) {
+            if (err) {
+                mongodb.close(function () {
+                    callback(err);
+                });
+            }
+            collection.find().toArray(function (err, albums) {
+                if (err) {
+                    mongodb.close(function () {
+                        callback(err);
+                    });
+                }
+                mongodb.close(function () {
+                    callback(null, albums);
+                });
+            });
+        });
+    });
+};

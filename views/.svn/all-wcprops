@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/MyBlog/!svn/ver/2/trunk/views
+END
+index.ejs
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/MyBlog/!svn/ver/2/trunk/views/index.ejs
+END
+logout.ejs
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/MyBlog/!svn/ver/2/trunk/views/logout.ejs
+END
+photo.ejs
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/MyBlog/!svn/ver/2/trunk/views/photo.ejs
+END
+article_info_layout.ejs
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/MyBlog/!svn/ver/2/trunk/views/article_info_layout.ejs
+END
+test_layout.ejs
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/MyBlog/!svn/ver/2/trunk/views/test_layout.ejs
+END
+layout.ejs
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/MyBlog/!svn/ver/2/trunk/views/layout.ejs
+END
+article_info.ejs
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/MyBlog/!svn/ver/2/trunk/views/article_info.ejs
+END
+test.ejs
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/MyBlog/!svn/ver/2/trunk/views/test.ejs
+END
+resume.ejs
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/MyBlog/!svn/ver/2/trunk/views/resume.ejs
+END
+article.ejs
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/MyBlog/!svn/ver/2/trunk/views/article.ejs
+END
+photo_layout.ejs
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/MyBlog/!svn/ver/2/trunk/views/photo_layout.ejs
+END
