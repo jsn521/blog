@@ -6,16 +6,16 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "3.4.6",
-    "ejs": "*",
-    "express-partials": "*",
-    "connect-mongodb": ">=0.1.7",
-    "mongodb": ">=0.9.9",
-    "string": "*",
-    "html-pe": "*",
-    "html-entities": "*",
-    "weibo": "*",
-    "qiniu": "*"
+    "body-parser": "^1.5.2",
+    "errorhandler": "^1.1.1",
+    "express": "^4.8.0",
+    "express-session": "^1.7.2",
+    "jade": "^1.5.0",
+    "ejs":"*",
+    "method-override": "^2.1.2",
+    "morgan": "^1.2.2",
+    "multer": "^0.1.3",
+    "serve-favicon": "^2.0.1"
   },
   "devDependencies": {
     "grunt": "^0.4.5"
