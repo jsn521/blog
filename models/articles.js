@@ -5,8 +5,8 @@
  * Time: 下午9:19
  * To change this template use File | Settings | File Templates.
  */
-var mongodb = require('./db');
-var ObjectID = require('mongodb').ObjectID;
+// var mongodb = require('./db');
+// var ObjectID = require('mongodb').ObjectID;
 //var string = require('string');
 //var html_pe = require('html-pe');
 //var parser = new html_pe.Parser();

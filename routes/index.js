@@ -1,7 +1,7 @@
 /*
  * GET home page.
  */
-var mongodb = require('../models/db');
+// var mongodb = require('../models/db');
 var Article = require('../models/articles');
 var ParentTag = require('../models/parenttag');
 var ChildTag = require('../models/childtag');
