@@ -10,7 +10,7 @@ var path = require('path');
 var partials = require('express-partials');
 var app = express();
 var store = new express.session.MemoryStore;
-var settings = require('./settings');
+// var settings = require('./settings');
 
 // all environments
 app.set('port', process.env.PORT || 3000);
